@@ -3,6 +3,7 @@ OBJS = add.o subtract.o multiply.o divide.o
 Arithmetic : Arithmetic.o add.o subtract.o multiply.o divide.o libArithmetic.a libArithmetic.so
 	gcc -o ../makeArithmetic *.o
 	cd ..;gcc -o staticArithmetic -I./lib -L./lib/a Arithmetic.c -lArithmetic
+	cd ..;gcc -g -o dbg_staticArithmetic -I./lib -L./lib/a Arithmetic.c -lArithmetic
 Arithmetic.o : Arithmetic.c
 	gcc -c Arithmetic.c
 add.o : add.c
